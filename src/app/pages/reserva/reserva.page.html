@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <!-- Columna con la flecha a la izquierda -->
+        <ion-col size="auto">
+          <ion-router-link routerLink="/home" color="dark" class="custom-router-link">
+            <ion-icon name="arrow-back" size="large"></ion-icon>
+          </ion-router-link>
+        </ion-col>
+
+        <!-- Columna con el título centrado -->
+        <ion-col class="arreglo">
+          <ion-title class="ion-text-center">Reserva</ion-title>
+        </ion-col>
+
+        <!-- Columna con el icono de la casa a la derecha -->
+        <ion-col size="auto">
+          <ion-router-link routerLink="/home" color="dark" class="custom-router-link">
+            <ion-icon name="home" size="large"></ion-icon>
+          </ion-router-link>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Aquí va el resto del contenido de la página -->
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Asientos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="ion-text-center">
+        <ion-img
+          src="../../../assets/image/simulacion.png"
+          alt="se callo la wea"
+        ></ion-img>
+      </div>
+     
+      <ion-text color="dark" class="ion-text-center">
+        <p>aqui iran los datos</p>
+      </ion-text>
+    
+      <div >     
+        <ion-router-link routerLink="/viaje" color="dark" class="custom-router-link">
+          <ion-button expand="block">Confirmar</ion-button>
+        </ion-router-link>
+      </div>
+    
+    </ion-card-content>
+
+  </ion-card>
+

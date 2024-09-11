@@ -1,0 +1,7 @@
+{
+  "name": "duocar",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
