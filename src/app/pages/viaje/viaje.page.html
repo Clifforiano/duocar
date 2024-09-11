@@ -1,13 +1,60 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>viaje</ion-title>
+    <ion-grid>
+      <ion-row>
+        <!-- Columna con la flecha a la izquierda -->
+        <ion-col size="auto">
+          <ion-router-link routerLink="/home" color="dark" class="custom-router-link">
+            <ion-icon name="arrow-back" size="large"></ion-icon>
+          </ion-router-link>
+        </ion-col>
+
+        <!-- Columna con el título centrado -->
+        <ion-col class="arreglo">
+          <ion-title class="ion-text-center">Tu viaje</ion-title>
+        </ion-col>
+
+        <!-- Columna con el icono de la casa a la derecha -->
+        <ion-col size="auto">
+          <ion-router-link routerLink="/home" color="dark" class="custom-router-link">
+            <ion-icon name="home" size="large"></ion-icon>
+          </ion-router-link>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">viaje</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
+
+
+
+
+
+
+
+  <!-- Aquí va el resto del c ontenido de la página -->
+
+  <div class="custom-p">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Flujo de viaje</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="ion-text-center padding">
+        <ion-img
+          src="../../../assets/image/simulacion2.png"
+          alt="se callo la wea"
+        ></ion-img>
+      </div>
+    
+      <div >     
+        <ion-router-link routerLink="/viaje" color="dark" class="custom-router-link">
+          <ion-button expand="block">Confirmar llegada</ion-button>
+        </ion-router-link>
+      </div>
+    
+    </ion-card-content>
+
+  </ion-card>
+</div>
+
