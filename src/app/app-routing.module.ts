@@ -34,7 +34,19 @@ const routes: Routes = [
   {
     path: 'editarperfil',
     loadChildren: () => import('./pages/editarperfil/editarperfil.module').then( m => m.EditarperfilPageModule)
+  },  {
+    path: 'cambiarcorreo',
+    loadChildren: () => import('./pages/cambiarcorreo/cambiarcorreo.module').then( m => m.CambiarcorreoPageModule)
   },
+  {
+    path: 'cambiarclave',
+    loadChildren: () => import('./pages/cambiarclave/cambiarclave.module').then( m => m.CambiarclavePageModule)
+  },
+  {
+    path: 'gracias',
+    loadChildren: () => import('./pages/gracias/gracias.module').then( m => m.GraciasPageModule)
+  },
+
 
 ];
 

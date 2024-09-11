@@ -4,14 +4,14 @@
       <ion-row>
         <!-- Columna con la flecha a la izquierda -->
         <ion-col size="auto">
-          <ion-router-link routerLink="/home" color="dark" >
+          <ion-router-link routerLink="/editarperfil" color="dark" >
             <ion-icon name="arrow-back" size="large"></ion-icon>
           </ion-router-link>
         </ion-col>
 
         <!-- Columna con el título centrado -->
         <ion-col class="arreglo">
-          <ion-title class="ion-text-center">Reserva</ion-title>
+          <ion-title class="ion-text-center">Perfil</ion-title>
         </ion-col>
 
         <!-- Columna con el icono de la casa a la derecha -->
@@ -26,31 +26,35 @@
 </ion-header>
 
 <ion-content>
-  <!-- Aquí va el resto del contenido de la página -->
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title class="ion-text-center">Asientos</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
+
       <div class="ion-text-center">
-        <ion-img
-          src="../../../assets/image/simulacion.png"
+        <ion-img style="height: 250px; padding-top: 20px;"
+          src="../../../assets/image/contra.png"
           alt="se callo la wea"
         ></ion-img>
       </div>
-     
-      <ion-text color="dark" class="ion-text-center">
-        <p>aqui iran los datos</p>
-      </ion-text>
-    
-      <div >     
-        <ion-router-link routerLink="/viaje" color="dark" class="custom-router-link">
-          <ion-button expand="block">Confirmar</ion-button>
-        </ion-router-link>
-      </div>
-    
+
+
+<ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-input label="clave:" placeholder="ingrese clave"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="contraseña nueva:" placeholder="contraseña"></ion-input>
+      </ion-item> 
+
+
+      <ion-item>
+        <ion-input label="contraseña nueva:" placeholder="contraseña"></ion-input>
+      </ion-item> 
+
+
     </ion-card-content>
+</ion-card>
 
-  </ion-card>
 
+
+</ion-content>
