@@ -67,7 +67,11 @@ const routes: Routes = [
   {
     path: 'homec',
     loadChildren: () => import('./pages/homec/homec.module').then( m => m.HomecPageModule)
+  },  {
+    path: 'viajec',
+    loadChildren: () => import('./pages/viajec/viajec.module').then( m => m.ViajecPageModule)
   },
+
 
 
 
