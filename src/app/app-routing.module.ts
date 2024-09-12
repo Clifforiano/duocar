@@ -54,6 +54,10 @@ const routes: Routes = [
     path: 'recu',
     loadChildren: () => import('./pages/recu/recu.module').then( m => m.RecuPageModule)
   },
+  {
+    path: 'cambiarclave2',
+    loadChildren: () => import('./pages/cambiarclave2/cambiarclave2.module').then( m => m.Cambiarclave2PageModule)
+  },
 
 
 ];
