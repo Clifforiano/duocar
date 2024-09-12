@@ -46,6 +46,14 @@ const routes: Routes = [
     path: 'gracias',
     loadChildren: () => import('./pages/gracias/gracias.module').then( m => m.GraciasPageModule)
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'recu',
+    loadChildren: () => import('./pages/recu/recu.module').then( m => m.RecuPageModule)
+  },
 
 
 ];
