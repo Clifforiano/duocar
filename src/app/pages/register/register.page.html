@@ -1,0 +1,67 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <!-- Columna con la flecha a la izquierda -->
+        <ion-col size="auto">
+          <ion-router-link routerLink="/login" color="dark" >
+            <ion-icon name="arrow-back" size="large"></ion-icon>
+          </ion-router-link>
+        </ion-col>
+
+        <!-- Columna con el título centrado -->
+
+          <ion-col class="modi">
+            <ion-title >Crear cuenta</ion-title>
+          </ion-col>
+
+
+   
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+
+
+<ion-card>
+
+  <div class="ion-text-center ion-padding">
+    <ion-text color="primary">
+      <h4>Rellene el formulario</h4>
+    </ion-text>
+  </div>
+
+
+
+  <div class="ion-text-center ion-padding">
+    <ion-icon name="person" size="large"></ion-icon>
+  </div>
+
+
+    <ion-card-content >
+      <ion-item>
+        <ion-input label="Correo:" placeholder="ingrese su correo"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="contraseña:" placeholder="ingrese su contraseña"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="contraseña:" placeholder="repita su contraseña"></ion-input>
+      </ion-item>
+
+      
+      <ion-router-link routerLink="/home" color="#fff">
+        <ion-button class="ion-padding" expand="block">Crear cuenta</ion-button>
+      </ion-router-link>
+
+    
+    </ion-card-content>
+</ion-card>
+</ion-content>

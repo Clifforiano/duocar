@@ -34,7 +34,8 @@ const routes: Routes = [
   {
     path: 'editarperfil',
     loadChildren: () => import('./pages/editarperfil/editarperfil.module').then( m => m.EditarperfilPageModule)
-  },  {
+  },
+  {
     path: 'cambiarcorreo',
     loadChildren: () => import('./pages/cambiarcorreo/cambiarcorreo.module').then( m => m.CambiarcorreoPageModule)
   },
@@ -58,6 +59,11 @@ const routes: Routes = [
     path: 'cambiarclave2',
     loadChildren: () => import('./pages/cambiarclave2/cambiarclave2.module').then( m => m.Cambiarclave2PageModule)
   },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
+
 
 
 ];
