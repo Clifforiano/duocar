@@ -25,34 +25,61 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+
+<div class="custom-p ">
+
+
+
+<ion-content >
 
 <ion-card>
     <ion-card-content>
       
       <ion-card-title class="ion-text-center ion-padding">Pasajero</ion-card-title>
 
+      <ion-text >
+        <h6 class="ion-text-center ion-padding">confirme la llegada de los pasajeros</h6>
+      </ion-text>
 
       <ion-item>
-        <ion-checkbox justify="space-between">Juanito perez</ion-checkbox>
+        
+
+            <ion-checkbox justify="space-between">Juanito perez</ion-checkbox>
+            <ion-icon name="close-circle" (click)="presentAlert()" class="ion-padding"></ion-icon>
+
+
       </ion-item>
       
       <ion-item>
         <ion-checkbox justify="space-between">Juanito perez</ion-checkbox>
+        <ion-icon name="close-circle" (click)="presentAlert()" class="ion-padding"></ion-icon>
       </ion-item>
 
       <ion-item>
         <ion-checkbox justify="space-between">Juanito perez</ion-checkbox>
+        <ion-icon name="close-circle" (click)="presentAlert()" class="ion-padding"></ion-icon>
       </ion-item>
 
       <ion-item>
         <ion-checkbox justify="space-between">Juanito perez</ion-checkbox>
+        <ion-icon name="close-circle" (click)="presentAlert()" class="ion-padding"></ion-icon>
       </ion-item>
 
-
-      <ion-router-link routerLink="/" color="#fff">
-        <ion-button class="ion-padding" expand="block">Confirmar</ion-button>
-      </ion-router-link>
+      <ion-grid>
+        <ion-row class="ion-justify-content-center ion-align-items-center">
+          <ion-col size="auto">
+            <ion-router-link routerLink="/llegada" color="#fff">
+              <ion-button expand="block">Confirmar</ion-button>
+            </ion-router-link>
+          </ion-col>
+          <ion-col size="auto">
+            <ion-router-link routerLink="/homec" color="#fff">
+              <ion-button expand="block">Cancelar</ion-button>
+            </ion-router-link>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
 
     </ion-card-content>
 </ion-card>
@@ -60,3 +87,5 @@
 
 
 </ion-content>
+
+</div>
