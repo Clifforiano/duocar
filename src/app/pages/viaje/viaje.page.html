@@ -38,8 +38,11 @@
   <ion-card>
     <ion-card-header>
       <ion-card-title class="ion-text-center">Flujo de viaje</ion-card-title>
+     
     </ion-card-header>
+    
     <ion-card-content>
+
       <div class="ion-text-center padding">
         <ion-img
           src="../../../assets/image/simulacion2.png"
@@ -47,11 +50,15 @@
         ></ion-img>
       </div>
     
-      <div >     
-        <ion-router-link routerLink="/gracias" color="dark" class="custom-router-link">
-          <ion-button expand="block">Confirmar llegada</ion-button>
-        </ion-router-link>
-      </div>
+      <div class="ion-text-center ion-padding"><ion-text>confirma tu bajada o cancela el viaje</ion-text></div>
+
+
+      <ion-grid>
+        <ion-row>
+          <ion-button class="ion-padding" expand="expand" routerLink="/gracias">Confirmar</ion-button>
+          <ion-button class="ion-padding" expand="expand" routerLink="/home">Cancelar</ion-button>
+        </ion-row>
+      </ion-grid>
     
     </ion-card-content>
 

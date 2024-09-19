@@ -75,6 +75,10 @@ const routes: Routes = [
     path: 'llegada',
     loadChildren: () => import('./pages/llegada/llegada.module').then( m => m.LlegadaPageModule)
   },
+  {
+    path: 'autos',
+    loadChildren: () => import('./pages/autos/autos.module').then( m => m.AutosPageModule)
+  },
 
 
 

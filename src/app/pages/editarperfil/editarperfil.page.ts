@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-editarperfil',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarperfilPage implements OnInit {
 
-  constructor() { }
+  constructor() { 
+
+
+    
+  }
+
+  
 
   ngOnInit() {
   }
+
+ 
 
 }
