@@ -79,6 +79,34 @@ const routes: Routes = [
     path: 'autos',
     loadChildren: () => import('./pages/autos/autos.module').then( m => m.AutosPageModule)
   },
+  {
+    path: 'homea',
+    loadChildren: () => import('./pages/homea/homea.module').then( m => m.HomeaPageModule)
+  },
+  {
+    path: 'auser',
+    loadChildren: () => import('./pages/auser/auser.module').then( m => m.AuserPageModule)
+  },
+  {
+    path: 'aviaje',
+    loadChildren: () => import('./pages/aviaje/aviaje.module').then( m => m.AviajePageModule)
+  },
+  {
+    path: 'apagos',
+    loadChildren: () => import('./pages/apagos/apagos.module').then( m => m.ApagosPageModule)
+  },
+  {
+    path: 'aedit',
+    loadChildren: () => import('./pages/aedit/aedit.module').then( m => m.AeditPageModule)
+  },
+  {
+    path: 'aautos',
+    loadChildren: () => import('./pages/aautos/aautos.module').then( m => m.AautosPageModule)
+  },
+  {
+    path: 'autosedit',
+    loadChildren: () => import('./pages/autosedit/autosedit.module').then( m => m.AutoseditPageModule)
+  },
 
 
 

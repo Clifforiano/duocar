@@ -1,0 +1,25 @@
+/* Estilo del título central de la lista */
+.lista-usuarios-titulo {
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  /* Estilo para reducir el tamaño de la fuente en las filas */
+  ion-col p {
+    font-size: 12px;
+  }
+  
+  /* Estilo para negritas en los títulos dentro de cada columna */
+  ion-col p strong {
+    font-weight: bold;
+  }
+
+  /* Hace que el header sea sticky y no desaparezca */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+

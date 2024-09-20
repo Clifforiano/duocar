@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <!-- Columna con la flecha a la izquierda -->
+        <ion-col size="auto">
+          <ion-router-link routerLink="/auser" color="dark" >
+            <ion-icon name="arrow-back" size="large"></ion-icon>
+          </ion-router-link>
+        </ion-col>
+
+        <!-- Columna con el título centrado -->
+        <ion-col class="arreglo">
+          <ion-title class="ion-text-center">Editar</ion-title>
+        </ion-col>
+
+        <!-- Columna con el icono de la casa a la derecha -->
+        <ion-col size="auto">
+          <ion-router-link routerLink="/homea" color="dark" >
+            <ion-icon name="home" size="large"></ion-icon>
+          </ion-router-link>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+    <ion-card-content>
+      <form>
+
+        <ion-item>
+          <ion-input label="Rut:" placeholder="20202022020"></ion-input>
+        </ion-item>
+
+      <ion-item>
+        <ion-input label="Nombre:" placeholder="Juanito"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Apellido:" placeholder="Juanez"></ion-input>
+      </ion-item> 
+
+
+
+      
+        <ion-button class="ion-padding" expand="block" type="submit">Cambiar</ion-button>
+      </form>
+
+      
+      
+    </ion-card-content>
+</ion-card>
+
+
+
+
+
+</ion-content>
