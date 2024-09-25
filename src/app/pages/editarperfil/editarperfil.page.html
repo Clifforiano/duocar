@@ -28,17 +28,35 @@
 <ion-content>
 <ion-card>
     <ion-card-content>
-      <form>
-      <ion-item>
-        <ion-input label="Nombre:" placeholder="Juanito"></ion-input>
-      </ion-item>
+      <form [formGroup]="form_perfil" (ngSubmit)="onSubmit()">
+        <!-- Campo para Nombre -->
+        <ion-item>
+          <ion-input label="Nombre:" placeholder="Juanito" formControlName="nombre"></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="nombre?.invalid && (nombre?.dirty || nombre?.touched)">
+          <small *ngIf="nombre?.errors?.['required']">El nombre es requerido.</small>
+          <small *ngIf="nombre?.errors?.['minlength']">El nombre debe tener al menos 3 caracteres.</small>
+          <small *ngIf="nombre?.errors?.['maxlength']">El nombre no puede tener más de 50 caracteres.</small>
+          <small *ngIf="nombre?.errors?.['lettersOnly']">El nombre solo puede contener letras.</small>
+        </ion-text>
+        <!-- Botón para cambiar el nombre -->
+        <ion-button class="ion-padding" expand="block" type="button" [disabled]="nombre?.invalid" (click)="onChangeNombre()">Cambiar Nombre</ion-button>
 
-      <ion-item>
-        <ion-input label="Apellido:" placeholder="Juanez"></ion-input>
-      </ion-item> 
+        <!-- Campo para Apellido -->
+        <ion-item>
+          <ion-input label="Apellido:" placeholder="Juanez" formControlName="apellido"></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="apellido?.invalid && (apellido?.dirty || apellido?.touched)">
+          <small *ngIf="apellido?.errors?.['required']">El apellido es requerido.</small>
+          <small *ngIf="apellido?.errors?.['minlength']">El apellido debe tener al menos 3 caracteres.</small>
+          <small *ngIf="apellido?.errors?.['maxlength']">El apellido no puede tener más de 50 caracteres.</small>
+          <small *ngIf="apellido?.errors?.['lettersOnly']">El apellido solo puede contener letras.</small>
+        </ion-text>
+        <!-- Botón para cambiar el apellido -->
+        <ion-button class="ion-padding" expand="block" type="button" [disabled]="apellido?.invalid" (click)="onChangeApellido()">Cambiar Apellido</ion-button>
 
-        <ion-button class="ion-padding" expand="block" type="submit">Cambiar</ion-button>
       </form>
+      
 
       
       

@@ -2,21 +2,16 @@
   <ion-toolbar>
     <ion-grid>
       <ion-row>
-        <!-- Columna con la flecha a la izquierda -->
         <ion-col size="auto">
-          <ion-router-link routerLink="/editarperfil" color="dark" >
+          <ion-router-link routerLink="/editarperfil" color="dark">
             <ion-icon name="arrow-back" size="large"></ion-icon>
           </ion-router-link>
         </ion-col>
-
-        <!-- Columna con el título centrado -->
         <ion-col class="arreglo">
           <ion-title class="ion-text-center">Perfil</ion-title>
         </ion-col>
-
-        <!-- Columna con el icono de la casa a la derecha -->
         <ion-col size="auto">
-          <ion-router-link routerLink="/home" color="dark" >
+          <ion-router-link routerLink="/home" color="dark">
             <ion-icon name="home" size="large"></ion-icon>
           </ion-router-link>
         </ion-col>
@@ -26,39 +21,37 @@
 </ion-header>
 
 <ion-content>
+  <div class="ion-text-center">
+    <ion-img style="height: 250px; padding-top: 20px;"
+      src="../../../assets/image/contra.png"
+      alt="se callo la wea">
+    </ion-img>
+  </div>
 
+  <form [formGroup]="form_clave" (ngSubmit)="onSubmit()">
+    <ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Contraseña nueva:</ion-label>
+          <ion-input type="password" formControlName="newPassword"></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="form_clave.get('newPassword')?.invalid && (form_clave.get('newPassword')?.dirty || form_clave.get('newPassword')?.touched)">
+          <small *ngIf="form_clave.get('newPassword')?.errors?.['required']">La contraseña nueva es requerida.</small>
+        </ion-text>
 
-      <div class="ion-text-center">
-        <ion-img style="height: 250px; padding-top: 20px;"
-          src="../../../assets/image/contra.png"
-          alt="se callo la wea"
-        ></ion-img>
-      </div>
+        <ion-item>
+          <ion-label position="floating">Confirmar contraseña:</ion-label>
+          <ion-input type="password" formControlName="confirmPassword"></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="form_clave.get('confirmPassword')?.invalid && (form_clave.get('confirmPassword')?.dirty || form_clave.get('confirmPassword')?.touched)">
+          <small *ngIf="form_clave.get('confirmPassword')?.errors?.['required']">La confirmación de la contraseña es requerida.</small>
+        </ion-text>
+        <ion-text color="danger" *ngIf="form_clave.errors?.['passwordMismatch']">
+          <small>Las contraseñas no coinciden.</small>
+        </ion-text>
 
-
-<ion-card>
-    <ion-card-content>
-      <ion-item>
-        <ion-input label="clave:" placeholder="ingrese clave"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-input label="contraseña nueva:" placeholder="contraseña"></ion-input>
-      </ion-item> 
-
-
-      <ion-item>
-        <ion-input label="contraseña nueva:" placeholder="contraseña"></ion-input>
-      </ion-item> 
-
-
-      <ion-router-link routerLink="/home" color="#fff">
-        <ion-button class="ion-padding" expand="block">Cambiar</ion-button>
-      </ion-router-link>
-
-    </ion-card-content>
-</ion-card>
-
-
-
+        <ion-button class="ion-padding" expand="block" type="submit" [disabled]="form_clave.invalid">Cambiar</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </form>
 </ion-content>
