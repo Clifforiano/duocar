@@ -53,7 +53,7 @@ export class EditarperfilPage implements OnInit {
   async presentToast(message: string) {
     const toast = await this.toastController.create({
       message: message,
-      duration: 2000, // Duración en milisegundos
+      duration: 1000, // Duración en milisegundos
       position: 'top', // Posición del Toast (top, bottom, middle)
     });
     await toast.present();
