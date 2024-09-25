@@ -23,8 +23,12 @@ export class CambiarcorreoPage implements OnInit {
 
   // Método para verificar que ambos correos sean iguales
   matchingEmails(formGroup: FormGroup) {
-    return formGroup.get('correoNuevo')?.value === formGroup.get('correoConfirmacion')?.value 
-      ? null : { emailsDoNotMatch: true };
+    const correoNuevo = formGroup.get('correoNuevo')?.value;
+    const correoConfirmacion = formGroup.get('correoConfirmacion')?.value;
+
+    return correoNuevo === correoConfirmacion 
+      ? null 
+      : { emailsDoNotMatch: true }; // Devuelve un error si los correos no coinciden
   }
 
   // Validación para comprobar que el dominio sea .cl o .com
@@ -51,7 +55,7 @@ export class CambiarcorreoPage implements OnInit {
   async presentToast(message: string) {
     const toast = await this.toastController.create({
       message: message,
-      duration: 2000, // Duración en milisegundos
+      duration: 1000, // Duración en milisegundos
       position: 'top', // Posición del Toast (top, bottom, middle)
     });
     await toast.present();

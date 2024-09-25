@@ -4,7 +4,7 @@
       <ion-row>
         <!-- Columna con la flecha a la izquierda -->
         <ion-col size="auto">
-          <ion-router-link routerLink="/home" color="dark" >
+          <ion-router-link routerLink="/home" color="dark">
             <ion-icon name="arrow-back" size="large"></ion-icon>
           </ion-router-link>
         </ion-col>
@@ -16,7 +16,7 @@
 
         <!-- Columna con el icono de la casa a la derecha -->
         <ion-col size="auto">
-          <ion-router-link routerLink="/home" color="dark" >
+          <ion-router-link routerLink="/home" color="dark">
             <ion-icon name="home" size="large"></ion-icon>
           </ion-router-link>
         </ion-col>
@@ -25,24 +25,13 @@
   </ion-toolbar>
 </ion-header>
 
-
-
-
-
-
-
-
-  <!-- Aquí va el resto del c ontenido de la página -->
-
-  <div class="custom-p">
+<div class="custom-p">
   <ion-card>
     <ion-card-header>
       <ion-card-title class="ion-text-center">Flujo de viaje</ion-card-title>
-     
     </ion-card-header>
     
     <ion-card-content>
-
       <div class="ion-text-center padding">
         <ion-img
           src="../../../assets/image/simulacion2.png"
@@ -50,18 +39,16 @@
         ></ion-img>
       </div>
     
-      <div class="ion-text-center ion-padding"><ion-text>confirma tu bajada o cancela el viaje</ion-text></div>
-
+      <div class="ion-text-center ion-padding">
+        <ion-text>Confirma tu bajada o cancela el viaje</ion-text>
+      </div>
 
       <ion-grid>
         <ion-row>
           <ion-button class="ion-padding" expand="expand" routerLink="/gracias">Confirmar</ion-button>
-          <ion-button class="ion-padding" expand="expand" routerLink="/home">Cancelar</ion-button>
+          <ion-button class="ion-padding" expand="expand" (click)="mostrarNotificacionCancelacion()" routerLink="/home">Cancelar</ion-button>
         </ion-row>
       </ion-grid>
-    
     </ion-card-content>
-
   </ion-card>
 </div>
-

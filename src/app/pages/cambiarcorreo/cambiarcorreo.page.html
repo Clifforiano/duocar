@@ -26,15 +26,16 @@
   <div class="ion-text-center">
     <ion-img style="height: 250px; padding-top: 20px;"
       src="../../../assets/image/correo.png"
-      alt="se callo la wea"
-    ></ion-img>
+      alt="se callo la wea">
+    </ion-img>
   </div>
 
   <ion-card>
     <ion-card-content>
       <form [formGroup]="form_correo" (ngSubmit)="onSubmit()">
         <ion-item>
-          <ion-input label="Correo Nuevo:" placeholder="correo" formControlName="correoNuevo"></ion-input>
+          <ion-label position="floating">Correo Nuevo:</ion-label>
+          <ion-input formControlName="correoNuevo" (focus)="form_correo.get('correoNuevo')?.markAsTouched()"></ion-input>
         </ion-item>
         <ion-text color="danger" *ngIf="form_correo.get('correoNuevo')?.invalid && (form_correo.get('correoNuevo')?.dirty || form_correo.get('correoNuevo')?.touched)">
           <small *ngIf="form_correo.get('correoNuevo')?.errors?.['required']">El correo es requerido.</small>
@@ -43,7 +44,8 @@
         </ion-text>
 
         <ion-item>
-          <ion-input label="Confirmar Correo:" placeholder="correo" formControlName="correoConfirmacion"></ion-input>
+          <ion-label position="floating">Confirmar Correo:</ion-label>
+          <ion-input formControlName="correoConfirmacion" (focus)="form_correo.get('correoConfirmacion')?.markAsTouched()"></ion-input>
         </ion-item>
         <ion-text color="danger" *ngIf="form_correo.get('correoConfirmacion')?.invalid && (form_correo.get('correoConfirmacion')?.dirty || form_correo.get('correoConfirmacion')?.touched)">
           <small *ngIf="form_correo.get('correoConfirmacion')?.errors?.['required']">La confirmación del correo es requerida.</small>
