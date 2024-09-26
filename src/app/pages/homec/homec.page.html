@@ -38,8 +38,6 @@
             <ion-icon name="exit" size="large"></ion-icon>
             <span>Cerrar sesión</span>
           </ion-router-link>
-
- 
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -58,7 +56,6 @@
 
   <ion-content padding>
     <ion-grid>
-      <!-- Primer Elemento: ion-select -->
       <ion-row>
         <ion-col size="12">
           <ion-item>
@@ -71,14 +68,12 @@
         </ion-col>
       </ion-row>
 
-      <!-- Segundo Elemento: ion-input -->
       <ion-row>
         <ion-col size="12">
           <ion-input label="¿Dónde vas?" label-placement="floating" fill="solid" placeholder="Ingresa la dirección" class="modi-1"></ion-input>
         </ion-col>
       </ion-row>
 
-      <!-- Lista de Tarjetas -->
       <ion-row>
         <ion-col size="12">
           <div class="scrollable-container">
@@ -90,33 +85,24 @@
                 <ion-list>
 
                   <ion-item>
-                    <ion-input label="Precio:" placeholder="$$$$$$$$$ "></ion-input>
-                  </ion-item> 
-
+                    <ion-input label="Precio:" placeholder="$$$" type="number" [(ngModel)]="precio" (ngModelChange)="validatePrice()"></ion-input>
+                    <div *ngIf="precioError" class="error-message">El precio debe ser un número positivo entre 1000 y 9999999.</div>
+                  </ion-item>
 
                   <ion-item>
-                    <ion-select label="Selecciona tu auto" placeholder="Tu nae">
+                    <ion-select label="Selecciona tu auto" placeholder="Tu auto" [(ngModel)]="selectedCar">
                       <ion-select-option value="La nae1">La nae1</ion-select-option>
                       <ion-select-option value="La nae2">La nae2</ion-select-option>
                       <ion-select-option value="La nae3">La nae3</ion-select-option>
-                    
                     </ion-select>
-                  </ion-item> 
+                  </ion-item>
 
-               
-                  
                 </ion-list>
-
-                
-          
-                
               </ion-card-content>
               <ion-card-content>
-       
-                  <ion-button expand="block" routerLink="/viajec">publicar</ion-button>
+                <ion-button expand="block" (click)="onSubmit()">Publicar</ion-button>
               </ion-card-content>
             </ion-card>
-
           </div>
         </ion-col>
       </ion-row>

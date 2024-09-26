@@ -48,7 +48,7 @@
         <!-- Campo para Nombre -->
         <ion-item>
           <ion-label position="floating">Nombre:</ion-label>
-          <ion-input formControlName="nombre"></ion-input>
+          <ion-input formControlName="nombre" (keydown)="preventSpaces($event)"></ion-input>
         </ion-item>
         <ion-text color="danger" *ngIf="nombre?.invalid && (nombre?.dirty || nombre?.touched)">
           <small *ngIf="nombre?.errors?.['required']">El nombre es requerido.</small>
@@ -64,7 +64,7 @@
         <!-- Campo para Apellido -->
         <ion-item>
           <ion-label position="floating">Apellido:</ion-label>
-          <ion-input formControlName="apellido"></ion-input>
+          <ion-input formControlName="apellido" (keydown)="preventSpaces($event)"></ion-input>
         </ion-item>
         <ion-text color="danger" *ngIf="apellido?.invalid && (apellido?.dirty || apellido?.touched)">
           <small *ngIf="apellido?.errors?.['required']">El apellido es requerido.</small>

@@ -37,7 +37,7 @@
 
         <ion-item>
           <ion-label position="floating">Marca:</ion-label>
-          <ion-input formControlName="marca"></ion-input>
+          <ion-input formControlName="marca" (keydown)="preventSpaces($event)"></ion-input>
         </ion-item>
         <ion-text color="danger" *ngIf="form_autos.get('marca')?.invalid && (form_autos.get('marca')?.dirty || form_autos.get('marca')?.touched)">
           <small *ngIf="form_autos.get('marca')?.errors?.['required']">La marca es requerida.</small>
@@ -50,7 +50,7 @@
 
         <ion-item>
           <ion-label position="floating">Modelo:</ion-label>
-          <ion-input formControlName="modelo"></ion-input>
+          <ion-input formControlName="modelo" (keydown)="preventSpaces($event)"></ion-input>
         </ion-item>
         <ion-text color="danger" *ngIf="form_autos.get('modelo')?.invalid && (form_autos.get('modelo')?.dirty || form_autos.get('modelo')?.touched)">
           <small *ngIf="form_autos.get('modelo')?.errors?.['required']">El modelo es requerido.</small>
@@ -62,7 +62,7 @@
 
         <ion-item>
           <ion-label position="floating">Color:</ion-label>
-          <ion-input formControlName="color"></ion-input>
+          <ion-input formControlName="color" (keydown)="preventSpaces($event)"></ion-input>
         </ion-item>
         <ion-text color="danger" *ngIf="form_autos.get('color')?.invalid && (form_autos.get('color')?.dirty || form_autos.get('color')?.touched)">
           <small *ngIf="form_autos.get('color')?.errors?.['required']">El color es requerido.</small>

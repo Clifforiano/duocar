@@ -104,4 +104,12 @@ export class AeditPage implements OnInit {
       this.presentToast(`El ID es inválido.`);
     }
   }
+
+  preventSpaces(event: KeyboardEvent) {
+    if (event.code === 'Space') {
+      event.preventDefault(); // Evita que se inserte un espacio
+    }
+  }
+  
+
 }

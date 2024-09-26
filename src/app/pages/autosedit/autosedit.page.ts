@@ -73,4 +73,12 @@ export class AutoseditPage implements OnInit {
       await this.presentToast('No se puede eliminar. Asegúrese de que la patente sea válida.');
     }
   }
+
+  preventSpaces(event: KeyboardEvent) {
+    if (event.code === 'Space') {
+      event.preventDefault(); // Evita que se inserte un espacio
+    }
+  }
+  
+
 }
