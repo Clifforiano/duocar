@@ -35,17 +35,21 @@
       <form [formGroup]="form_correo" (ngSubmit)="onSubmit()">
         <ion-item>
           <ion-label position="floating">Correo Nuevo:</ion-label>
-          <ion-input formControlName="correoNuevo" (focus)="form_correo.get('correoNuevo')?.markAsTouched()"></ion-input>
+          <ion-input formControlName="correoNuevo" 
+                     (focus)="form_correo.get('correoNuevo')?.markAsTouched()" 
+                     (input)="removeSpaces('correoNuevo')"></ion-input>
         </ion-item>
         <ion-text color="danger" *ngIf="form_correo.get('correoNuevo')?.invalid && (form_correo.get('correoNuevo')?.dirty || form_correo.get('correoNuevo')?.touched)">
           <small *ngIf="form_correo.get('correoNuevo')?.errors?.['required']">El correo es requerido.</small>
           <small *ngIf="form_correo.get('correoNuevo')?.errors?.['email']">El correo no es válido.</small>
           <small *ngIf="form_correo.get('correoNuevo')?.errors?.['dominioInvalido']">El dominio debe ser .cl o .com.</small>
         </ion-text>
-
+      
         <ion-item>
           <ion-label position="floating">Confirmar Correo:</ion-label>
-          <ion-input formControlName="correoConfirmacion" (focus)="form_correo.get('correoConfirmacion')?.markAsTouched()"></ion-input>
+          <ion-input formControlName="correoConfirmacion" 
+                     (focus)="form_correo.get('correoConfirmacion')?.markAsTouched()" 
+                     (input)="removeSpaces('correoConfirmacion')"></ion-input>
         </ion-item>
         <ion-text color="danger" *ngIf="form_correo.get('correoConfirmacion')?.invalid && (form_correo.get('correoConfirmacion')?.dirty || form_correo.get('correoConfirmacion')?.touched)">
           <small *ngIf="form_correo.get('correoConfirmacion')?.errors?.['required']">La confirmación del correo es requerida.</small>
@@ -53,9 +57,10 @@
           <small *ngIf="form_correo.get('correoConfirmacion')?.errors?.['dominioInvalido']">El dominio debe ser .cl o .com.</small>
           <small *ngIf="form_correo.errors?.['emailsDoNotMatch']">Los correos no coinciden.</small>
         </ion-text>
-
+      
         <ion-button class="ion-padding" expand="block" type="submit" [disabled]="form_correo.invalid">Cambiar</ion-button>
       </form>
+      
     </ion-card-content>
   </ion-card>
 </ion-content>

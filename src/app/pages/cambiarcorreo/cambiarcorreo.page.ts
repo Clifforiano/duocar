@@ -8,7 +8,7 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./cambiarcorreo.page.scss'],
 })
 export class CambiarcorreoPage implements OnInit {
-
+  
   public form_correo: FormGroup;
 
   constructor(private fb: FormBuilder, private toastController: ToastController) {
@@ -59,5 +59,13 @@ export class CambiarcorreoPage implements OnInit {
       position: 'top', // Posición del Toast (top, bottom, middle)
     });
     await toast.present();
+  }
+
+  // Método para eliminar espacios en blanco
+  removeSpaces(field: string) {
+    const control = this.form_correo.get(field);
+    if (control) {
+      control.setValue(control.value.replace(/\s+/g, ''));
+    }
   }
 }

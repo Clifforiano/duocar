@@ -29,6 +29,14 @@ export class AutosPage implements OnInit {
     return valid ? null : { lettersOnly: true }; // Retorna un error si no es válido
   }
 
+  // Método para eliminar espacios en el input
+  removeSpaces(field: string) {
+    const control = this.form_autos.get(field);
+    if (control) {
+      control.setValue(control.value.replace(/\s+/g, '')); // Reemplaza múltiples espacios por un string vacío
+    }
+  }
+
   // Método para manejar el envío del formulario (Agregar)
   async onSubmit() {
     if (this.form_autos.valid) {

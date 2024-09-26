@@ -28,6 +28,7 @@ export class CambiarclavePage implements OnInit {
     return newPassword === confirmPassword ? null : { passwordMismatch: true };
   }
 
+  // Método para manejar el envío del formulario
   async onSubmit() {
     if (this.form_clave.valid) {
       // Aquí puedes agregar la lógica para cambiar la contraseña en el backend.
@@ -45,4 +46,12 @@ export class CambiarclavePage implements OnInit {
       this.form_clave.markAllAsTouched();
     }
   }
+
+  // Método para eliminar espacios en blanco
+  removeSpaces(field: string) {
+    const control = this.form_clave.get(field);
+    if (control) {
+      control.setValue(control.value.replace(/\s+/g, ''));
+    }
+}
 }
