@@ -9,6 +9,12 @@ import { ToastController, NavController } from '@ionic/angular';
 })
 export class RegisterPage implements OnInit {
   public form_register: FormGroup;
+  
+  // Control de visibilidad de la contraseña y confirmación
+  public passwordType: string = 'password'; 
+  public passwordIcon: string = 'eye-off'; 
+  public confirmPasswordType: string = 'password'; 
+  public confirmPasswordIcon: string = 'eye-off'; 
 
   constructor(private fb: FormBuilder, private toastController: ToastController, private navCtrl: NavController) {
     // Crear el FormGroup con validaciones
@@ -23,6 +29,29 @@ export class RegisterPage implements OnInit {
   }
 
   ngOnInit() {}
+
+  // Método para alternar la visibilidad de la contraseña
+  togglePasswordVisibility(field: string) {
+    if (field === 'password') {
+      // Cambiar la visibilidad de la contraseña
+      if (this.passwordType === 'password') {
+        this.passwordType = 'text';
+        this.passwordIcon = 'eye';
+      } else {
+        this.passwordType = 'password';
+        this.passwordIcon = 'eye-off';
+      }
+    } else if (field === 'confirm') {
+      // Cambiar la visibilidad de la confirmación de la contraseña
+      if (this.confirmPasswordType === 'password') {
+        this.confirmPasswordType = 'text';
+        this.confirmPasswordIcon = 'eye';
+      } else {
+        this.confirmPasswordType = 'password';
+        this.confirmPasswordIcon = 'eye-off';
+      }
+    }
+  }
 
   // Método para verificar que ambos correos sean iguales
   matchingEmails(formGroup: FormGroup) {
