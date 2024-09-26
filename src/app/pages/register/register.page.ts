@@ -112,4 +112,14 @@ export class RegisterPage implements OnInit {
     });
     await toast.present();
   }
+
+// Método para eliminar espacios de un control específico
+removeSpaces(controlName: string) {
+  const control = this.form_register.get(controlName);
+  if (control) {
+    control.setValue(control.value.replace(/\s+/g, ''));
+  }
+}
+
+
 }
