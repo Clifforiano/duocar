@@ -8,7 +8,6 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./editarperfil.page.scss'],
 })
 export class EditarperfilPage implements OnInit {
-
   public form_perfil = new FormGroup({
     nombre: new FormControl('', [
       Validators.required,
@@ -53,8 +52,8 @@ export class EditarperfilPage implements OnInit {
   async presentToast(message: string) {
     const toast = await this.toastController.create({
       message: message,
-      duration: 1000, // Duración en milisegundos
-      position: 'top', // Posición del Toast (top, bottom, middle)
+      duration: 1000,
+      position: 'top',
     });
     await toast.present();
   }
@@ -63,7 +62,6 @@ export class EditarperfilPage implements OnInit {
     if (this.nombre?.valid) {
       console.log('Nombre cambiado a:', this.nombre?.value);
       this.presentToast(`Nombre cambiado a: ${this.nombre.value}`);
-      // Aquí puedes agregar la lógica que necesites para cambiar el nombre
     } else {
       this.presentToast(`El nombre es inválido.`);
     }
@@ -73,9 +71,15 @@ export class EditarperfilPage implements OnInit {
     if (this.apellido?.valid) {
       console.log('Apellido cambiado a:', this.apellido?.value);
       this.presentToast(`Apellido cambiado a: ${this.apellido.value}`);
-      // Aquí puedes agregar la lógica que necesites para cambiar el apellido
     } else {
       this.presentToast(`El apellido es inválido.`);
+    }
+  }
+
+  removeSpaces(controlName: string) {
+    const control = this.form_perfil.get(controlName);
+    if (control) {
+      control.setValue(control.value.replace(/\s+/g, ''));
     }
   }
 }
