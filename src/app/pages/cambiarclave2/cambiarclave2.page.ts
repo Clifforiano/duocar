@@ -9,53 +9,44 @@ import { ToastController, NavController } from '@ionic/angular';
 })
 export class Cambiarclave2Page implements OnInit {
   public form_clave: FormGroup;
-  public claveIncorrecta: boolean = false; // Para mostrar el error de clave incorrecta
+  public claveIncorrecta: boolean = false;
 
   constructor(private fb: FormBuilder, private toastController: ToastController, private navCtrl: NavController) {
-    // Crear el FormGroup con validaciones
     this.form_clave = this.fb.group({
-      claveActual: ['', Validators.required], // Clave actual
-      contraseñaNueva: ['', [Validators.required, Validators.minLength(6)]], // Nueva contraseña
-      confirmarContraseña: ['', Validators.required], // Confirmar nueva contraseña
-    }, { validator: this.matchingPasswords }); // Validación para verificar que ambas contraseñas sean iguales
+      claveActual: ['', Validators.required],
+      contraseñaNueva: ['', [Validators.required, Validators.minLength(6)]],
+      confirmarContraseña: ['', Validators.required],
+    }, { validator: this.matchingPasswords });
   }
 
   ngOnInit() {}
 
-  // Método para verificar que ambas contraseñas sean iguales
   matchingPasswords(formGroup: FormGroup) {
     const contraseñaNueva = formGroup.get('contraseñaNueva')?.value;
     const confirmarContraseña = formGroup.get('confirmarContraseña')?.value;
 
     return contraseñaNueva === confirmarContraseña 
       ? null 
-      : { passwordsDoNotMatch: true }; // Devuelve un error si las contraseñas no coinciden
+      : { passwordsDoNotMatch: true };
   }
 
-  // Método para comprobar la clave actual en tiempo real
   checkClaveActual() {
     const claveActual = this.form_clave.get('claveActual')?.value;
-    this.claveIncorrecta = (claveActual !== '123' && claveActual.length > 0); // Establecer error si la clave es incorrecta
+    this.claveIncorrecta = (claveActual !== '123' && claveActual.length > 0);
   }
 
   // Método para manejar el envío del formulario
   async onSubmit() {
-    this.claveIncorrecta = false; // Resetear el estado de la clave incorrecta
+    this.claveIncorrecta = false;
 
     if (this.form_clave.valid) {
       const claveActual = this.form_clave.get('claveActual')?.value;
-      // Verificar que la clave actual sea '123'
       if (claveActual === '123') {
         console.log('Contraseña cambiada exitosamente:', this.form_clave.value);
-        // Aquí puedes agregar la lógica para cambiar la contraseña
-
-        // Mostrar notificación de éxito
         await this.presentToast('Contraseña cambiada exitosamente.');
-
-        // Redirigir a la página de login
-        this.navCtrl.navigateRoot('/login'); // Cambia '/login' por la ruta correcta si es diferente
+        this.navCtrl.navigateRoot('/login');
       } else {
-        this.claveIncorrecta = true; // Establecer error de clave incorrecta
+        this.claveIncorrecta = true;
         console.log('Clave actual incorrecta');
       }
     } else {
@@ -63,12 +54,19 @@ export class Cambiarclave2Page implements OnInit {
     }
   }
 
-  // Método para presentar un Toast
+  // Método para eliminar espacios de un control específico
+  removeSpaces(controlName: string) {
+    const control = this.form_clave.get(controlName);
+    if (control) {
+      control.setValue(control.value.replace(/\s+/g, ''));
+    }
+  }
+
   async presentToast(message: string) {
     const toast = await this.toastController.create({
       message: message,
-      duration: 2000, // Duración en milisegundos
-      position: 'top', // Posición del Toast (top, bottom, middle)
+      duration: 2000,
+      position: 'top',
     });
     await toast.present();
   }

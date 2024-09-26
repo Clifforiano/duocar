@@ -7,7 +7,6 @@
             <ion-icon name="arrow-back" size="large"></ion-icon>
           </ion-router-link>
         </ion-col>
-
         <ion-col class="modi">
           <ion-title>Recuperación</ion-title>
         </ion-col>
@@ -29,19 +28,18 @@
       <form [formGroup]="form_clave" (ngSubmit)="onSubmit()">
         <ion-item>
           <ion-label position="floating">Clave Actual:</ion-label>
-          <ion-input type="password" formControlName="claveActual" (input)="checkClaveActual()"></ion-input>
+          <ion-input type="password" formControlName="claveActual" (input)="removeSpaces('claveActual')"></ion-input>
         </ion-item>
         <ion-text color="danger" *ngIf="form_clave.get('claveActual')?.invalid && (form_clave.get('claveActual')?.dirty || form_clave.get('claveActual')?.touched)">
           <small *ngIf="form_clave.get('claveActual')?.errors?.['required']">La clave actual es requerida.</small>
         </ion-text>
-        <!-- Mensaje de error para clave incorrecta -->
         <ion-text color="danger" *ngIf="claveIncorrecta">
           <small>La clave actual es incorrecta.</small>
         </ion-text>
 
         <ion-item>
           <ion-label position="floating">Contraseña Nueva:</ion-label>
-          <ion-input type="password" formControlName="contraseñaNueva"></ion-input>
+          <ion-input type="password" formControlName="contraseñaNueva" (input)="removeSpaces('contraseñaNueva')"></ion-input>
         </ion-item>
         <ion-text color="danger" *ngIf="form_clave.get('contraseñaNueva')?.invalid && (form_clave.get('contraseñaNueva')?.dirty || form_clave.get('contraseñaNueva')?.touched)">
           <small *ngIf="form_clave.get('contraseñaNueva')?.errors?.['required']">La nueva contraseña es requerida.</small>
@@ -50,7 +48,7 @@
 
         <ion-item>
           <ion-label position="floating">Confirmar Contraseña Nueva:</ion-label>
-          <ion-input type="password" formControlName="confirmarContraseña"></ion-input>
+          <ion-input type="password" formControlName="confirmarContraseña" (input)="removeSpaces('confirmarContraseña')"></ion-input>
         </ion-item>
         <ion-text color="danger" *ngIf="form_clave.get('confirmarContraseña')?.invalid && (form_clave.get('confirmarContraseña')?.dirty || form_clave.get('confirmarContraseña')?.touched)">
           <small *ngIf="form_clave.get('confirmarContraseña')?.errors?.['required']">La confirmación es requerida.</small>
