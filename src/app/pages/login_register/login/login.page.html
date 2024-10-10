@@ -1,0 +1,53 @@
+
+<ion-content>
+
+
+  <div class="ion-text-center">
+    <ion-img style="height: 250px; padding-top: 20px;"
+      src="../../../assets/image/logo.png"
+      alt="se callo la wea"
+    ></ion-img>
+  </div>
+
+
+<ion-card>
+<ion-card-content>
+  <form [formGroup]="formulario_login">
+  <ion-item>
+    <ion-input label="Correo:" placeholder="ingrese correo" formControlName="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input label="contraseña:" placeholder="ingrese contraseña" formControlName="password"></ion-input>
+  </ion-item> 
+
+
+  <ion-router-link routerLink="/home" color="#fff">
+    <ion-button class="ion-padding" expand="block">Ingresar</ion-button>
+  </ion-router-link>
+
+</form>
+
+  <div class="ion-text-center">
+    <ion-router-link routerLink="/recu">
+      <ion-text style="color: darkblue;">
+        recuperar cuenta
+      </ion-text>
+    </ion-router-link>
+  </div>
+
+
+  <div class="ion-text-center ion-padding">
+    <ion-router-link routerLink="/register">
+      <ion-text style="color: darkblue;">
+        crear cuenta
+      </ion-text>
+    </ion-router-link>
+  </div>
+
+</ion-card-content>
+</ion-card>
+
+
+
+</ion-content>  

@@ -11,6 +11,10 @@ export class PerfilPasajeroPage implements OnInit {
   formulario_perfil_pasajero: FormGroup;
   touchedNombre: boolean = false;
   touchedApellido: boolean = false;
+  nom_des: boolean = true;
+  ape_des: boolean = true;
+  
+ 
 
   constructor(private formBuilder: FormBuilder) { 
 
@@ -53,10 +57,17 @@ export class PerfilPasajeroPage implements OnInit {
     this.touchedApellido = true;
     if (this.formulario_perfil_pasajero.get('apellido')?.valid){
     console.log(this.formulario_perfil_pasajero.value);
+    
     }
     else{
       this.formulario_perfil_pasajero.get('apellido')?.markAsTouched();
     }
   }
+
+
+ 
+
+
+
 
 }

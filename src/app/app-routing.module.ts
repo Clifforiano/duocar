@@ -18,7 +18,11 @@ const routes: Routes = [
   {
     path: 'perfil-pasajero',
     loadChildren: () => import('./pages/pasajero/opciones/perfil-pasajero/perfil-pasajero.module').then( m => m.PerfilPasajeroPageModule)
+  },  {
+    path: 'login',
+    loadChildren: () => import('./pages/login_register/login/login.module').then( m => m.LoginPageModule)
   },
+
 ];
 
 @NgModule({
