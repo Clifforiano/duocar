@@ -1,10 +1,6 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
 
-
-/* variables.scss */
-
-/* Estilos específicos para Android */
 ion-menu-button {
     --color: #000 !important; /* Cambia esto al color deseado para el icono del menú */
   }
@@ -28,4 +24,3 @@ ion-button {
     --color-activated: #fff; /* Color del texto cuando el botón está presionado */
     --font-weight: bold !important;
   }
-  
